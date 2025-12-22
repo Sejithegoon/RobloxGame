@@ -29,8 +29,6 @@ Main Idea: ***Catch A Bird!!***
 ### Grinding
 
 
-### Lore
-
 
 
 ## Game Main Feature 
@@ -41,6 +39,23 @@ Bird's flying around, resting on trees, walking around.
 
 *Player :* Hunt with weapon, sell birds, index birds, **FLEX BIRDS**
 
+### Sub Mechanics
+*Weapons :* Luck Stat, Simple Accssories
 
+### Map
+*One Big Island :* Sell Shop, Buy Shop, Leadboard, NPC
+
+### Lore
+
+*Birds are going missing one by one, so you need to collect all the types of birds*
+
+### Birds
+**Size,Rarity,Type,Animations**
+
+### Waepons
+
+### Player 
+
+### Score 
 
 ## Parting / Planning 
