@@ -1,0 +1,25 @@
+Description:
+v1
+Spawning bug from Replicated storage
+
+Code:
+
+local replicatedStorage = game:GetService("ReplicatedStorage")
+local listOfBugs = {}
+local TweenService = game:GetService("TweenService")
+local tree = script.Parent
+local allTrees = {workspace["Tree 1"], workspace["Tree 2"], workspace["Tree 3"], workspace["Tree 4"], workspace["Tree 5"], workspace["Tree 6"], workspace["Tree 7"], workspace["Tree 8"], workspace["Tree 9"]}
+
+for i = 1,10 do
+	local bug = replicatedStorage.Bug:Clone()
+	bug.Name = "Bug 43" .. i
+	bug.Parent = workspace
+	bug.Position = tree.Position + Vector3.new(5, 10, 0)
+	bug:SetAttribute("destination", allTrees[math.random(1, #allTrees)].Position)
+	table.insert(listOfBugs, bug)
+	task.wait(5)
+	 
+end
+
+
+

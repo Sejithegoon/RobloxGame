@@ -1,0 +1,28 @@
+Description:
+v1
+Script for the bus to move from one tree to an other
+
+
+Code: 
+
+local bug = script.Parent
+local TweenService = game:GetService("TweenService")
+local destination = bug:GetAttribute("destination")
+if not destination then
+	destination = bug:GetAttributeChangedSignal("destination"):Wait()
+	destination = bug:GetAttribute("destination")
+end
+
+bug.Anchored = true
+bug.Shape = Enum.PartType.Ball
+bug.Size = Vector3.new(3, 3, 3)
+
+local tween = TweenService:Create(
+	bug,
+	TweenInfo.new(2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+	{Position = destination + Vector3.new( math.random() - 0.5,  math.random(),  math.random())}
+
+)
+tween:Play()
+tween.Completed:Wait()
+bug:Destroy()
