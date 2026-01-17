@@ -1,0 +1,29 @@
+
+local part = script.Parent
+
+local curntPos = part.Position
+local goal = game.Workspace["Tree 2"].Position -- Target position
+local nextPos = nil
+
+local distance = (curntPos - goal).Magnitude
+print(distance)
+local sin = 0
+
+
+
+
+while true do
+	sin = sin + 0.1
+	part.CFrame = CFrame.lookAt(curntPos, goal)
+	curntPos = part.Position
+	nextPos = curntPos  + (part.CFrame.LookVector * distance/167) + Vector3.new(0, math.sin(sin), 0)
+	part.CFrame = CFrame.new(nextPos)
+	curntPos = nextPos
+	wait(0.01)
+	
+	
+	if (curntPos - goal).Magnitude < 5 then
+		break
+	end
+	
+end
