@@ -1,4 +1,31 @@
+Version 2 ( function)
+function fly(bug, goal, speed)	 
+	 local curntPos = bug.Position
+	 local nextPos = nil
+	 local distance = (curntPos - goal).Magnitude
+	 local flightOffset = 0
+	 
+	
+	while (curntPos - goal).Magnitude > 5 do
+		flightOffset = flightOffset + 0.1
+		bug.CFrame = CFrame.lookAt(curntPos, goal)
+		curntPos = bug.Position
+		nextPos = curntPos + (bug.CFrame.LookVector * distance/speed) + Vector3.new(math.cos(flightOffset), math.sin(flightOffset), 0)
+		bug.CFrame = CFrame.new(nextPos)
+		curntPos = nextPos
+		wait(0.001)
+		
+	end
+	
+end
 
+
+
+
+
+
+
+Version 1
 local part = script.Parent
 
 local curntPos = part.Position
