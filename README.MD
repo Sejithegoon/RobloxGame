@@ -86,6 +86,36 @@ Bugs are going missing one by one — your job is to collect every type of bug.
    When a bug spawns, the tree passes it a destination.  
    - If a player catches the bug before it reaches the destination → bug is collected.  
    - If it reaches the destination uncaught → bug despawns there.
+   
+   ###### Code Used
+   Script is stored in tree leaf's it
+   ```lua
+   local tree = script.Parent -- should be stored in tree leaf part
+
+   local listOfTrees = {} --list of all the tress 
+
+   while true do -- will run forever
+
+	local randomTree = listOfTrees[math.random(1, #listOfTrees)] -- picks random tree in from the list 
+
+	local newBug = game.ReplicatedStorage.Bug:Clone() -- clones a bug from Replacated Storage (this should be a random bug based on the rates )
+
+	newBug.Position = tree.Position  -- gives the bug a postion, which is the same as the leaf of parent tree
+
+	newBug.Name = "Common Bug" -- should pass the name as the bug bassed on which bug cloned 
+
+	newBug:SetAttribute("Goal",listOfTrees[math.random(1, #listOfTrees)].Position) -- passes the "Attribute"  the goal(destination) to the bug 
+
+	newBug.Parent = game.Workspace -- put the bug into the work space (the game)
+
+	task.wait(15) -- timer to spawn the next bug
+	
+   end
+
+   
+   ```
+
+   
 
 
 ## Weapons
