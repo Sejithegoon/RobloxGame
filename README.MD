@@ -87,9 +87,9 @@ Bugs are going missing one by one — your job is to collect every type of bug.
    - If a player catches the bug before it reaches the destination → bug is collected.  
    - If it reaches the destination uncaught → bug despawns there.
    
-   ###### Code Used
-   Script is stored in tree leaf's it
-   ```lua
+###### Code Used
+Script is stored in tree leaf's it
+```lua
    local tree = script.Parent -- should be stored in tree leaf part
 
    local listOfTrees = {} --list of all the tress 
